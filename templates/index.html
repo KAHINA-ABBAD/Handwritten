@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNIST Digit Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Classification de Chiffres Manuscrits</h1>
+        
+        <div class="upload-section">
+            <h2>Charger une image</h2>
+            <input type="file" id="fileInput" accept="image/*">
+            <button onclick="predict()">Prédire</button>
+        </div>
+        
+        <div id="preview"></div>
+        
+        <div id="result" style="display: none;">
+            <h2>Résultat</h2>
+            <p>Chiffre prédit : <span id="predicted-class"></span></p>
+            <p>Confiance : <span id="confidence"></span>%</p>
+            <div id="top3"></div>
+        </div>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/canvas.js') }}"></script>
+</body>
+</html>
