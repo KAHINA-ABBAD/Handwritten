@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Reconnaissance de chiffres manuscrits</title>
+</head>
+<body>
+
+<h2>Détection de chiffres manuscrits (MNIST)</h2>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <button type="submit">Prédire</button>
+</form>
+
+{% if prediction is not none %}
+    <h3>Chiffre prédit : {{ prediction }}</h3>
+
+    <h4>Probabilités :</h4>
+    <ul>
+        {% for i in range(10) %}
+            <li>{{ i }} : {{ "%.2f"|format(probabilities[i] * 100) }} %</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+</body>
+</html>
