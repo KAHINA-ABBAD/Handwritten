@@ -1,0 +1,2 @@
+Model,Architecture,Train_Accuracy,Val_Accuracy,Test_Accuracy,Test_Loss,Parameters
+MLP Baseline,[512-256-128],99.74%,98.50%,98.47%,0.0624,571018
